@@ -14,16 +14,20 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setPixelRatio( window.devicePixelRatio );
 renderer.setSize( window.innerWidth, window.innerHeight );
 
-camera.position.setZ(30);
-//camera.position.z = 5;
+camera.position.z = 30;
 
 renderer.render( scene, camera );
 
 const geometry = new THREE.TorusGeometry( 10, 3, 16, 100 );
-const material = new THREE.MeshBasicMaterial( {color: 0xFF6347, wireframe: true} );
+const material = new THREE.MeshStandardMaterial( {color: 0xFF6347} );
 const torus = new THREE.Mesh(geometry, material);
 
 scene.add(torus);
+
+const pointLight = new THREE.PointLight(0xffffff);
+pointLight.position.set(7,7,7);
+
+scene.add(pointLight);
 
 function animate() {
     requestAnimationFrame(animate);
