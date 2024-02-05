@@ -68,6 +68,19 @@ const moon = new THREE.Mesh(
 
 scene.add(moon);
 
+
+// Animation - Position
+moon.position.z = 30;
+moon.position.setX(-10);
+
+// Animation - Move Camera
+function moveCamera() {
+    const t = document.body.getBoundingClientRect().top;
+}
+
+document.body.onscroll = moveCamera;
+
+
 function animate() {
     requestAnimationFrame(animate);
     torus.rotation.x += 0.01;
