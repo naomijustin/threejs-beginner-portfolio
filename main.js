@@ -26,7 +26,7 @@ const torus = new THREE.Mesh(geometry, material);
 
 scene.add(torus);
 
-
+// Lighting
 const pointLight = new THREE.PointLight(0xffffff, 4, 100, 0);
 pointLight.position.set(1,0,10);
 
@@ -55,6 +55,17 @@ Array(200).fill().forEach(addStar);
 const spaceTexture = new THREE.TextureLoader().load('images/spaceBg.png');
 scene.background = spaceTexture;
 
+// Cat avatar
+const catTexture = new THREE.TextureLoader().load('images/cat.png');
+
+const cat = new THREE.Mesh(
+    new THREE.BoxGeometry(3,3,3),
+    new THREE.MeshBasicMaterial( {map: catTexture} )
+)
+
+scene.add(cat);
+
+// Moon
 const moonTexture = new THREE.TextureLoader().load('images/moonTexture.jpg');
 const normalTexture = new THREE.TextureLoader().load('images/moonNormalTexture.png');
 
@@ -76,6 +87,17 @@ moon.position.setX(-10);
 // Animation - Move Camera
 function moveCamera() {
     const t = document.body.getBoundingClientRect().top;
+    moon.rotation.x += 0.05;
+    moon.rotation.y += 0.075;
+    moon.rotation.z += 0.05;
+
+    cat.rotation.y += 0.01;
+    cat.rotation.z += 0.01;
+
+    camera.position.z = t * -0.01;
+    camera.position.x = t * -0.0002;
+    camera.position.y = t * -0.0002;
+
 }
 
 document.body.onscroll = moveCamera;
