@@ -6,5 +6,15 @@ canvas {
 
 main {
   position: absolute;
-  font-size: 3rem;
+  font-size: 2rem;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+header {
+  grid-column: 2 / span 5;
+}
+
+section {
+  grid-column: 2 / 8;
 }
