@@ -6,9 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
   </head>
+  <style>
+    .hidden {
+      visibility: hidden;
+    }
+  </style>
   <body>
     <canvas id="bg"></canvas>
-    <main>
+    <main class="hidden">
       <header class="backgroundColour" style="padding: 10px 20px;">
         Celestial Delights: A Cosmic Journey Through Interactive 3D
       </header>
@@ -33,19 +38,9 @@
     </main>
     <script type="module" src="./main.js"></script>
     <script>
-      
-      // function fixFilePaths() {
-      //   const scripts = document.querySelectorAll('script');
-      //   scripts.forEach(script => {
-      //     let src = script.getAttribute('src');
-      //     if (src && src.includes('/assets') && !src.startsWith('.')) {
-      //       src = '.' + src;
-      //       script.setAttribute('src', src);
-      //     }
-      //   })
-      // }
-
-      // window.addEventListener('load', fixFilePaths);
+      window.addEventListener('load', function(){
+        document.body.querySelector('main').classList.remove('hidden');
+      });      
     </script>
   </body>
 </html>
