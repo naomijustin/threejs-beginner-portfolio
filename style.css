@@ -9,6 +9,7 @@ main {
   font-size: 2rem;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+  color: #000000;
 }
 
 header {
@@ -17,4 +18,13 @@ header {
 
 section {
   grid-column: 2 / 8;
+}
+.backgroundColour {
+  background-color: rgb(255,255,255,0.3);
+  padding: 0px 20px;
+  border-radius: 20px;
+  margin: 20px 0px;
+}
+.hidden {
+  display: none;
 }
