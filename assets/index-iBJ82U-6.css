@@ -1,1 +1,0 @@
-canvas{position:fixed;top:0;left:0}main{position:absolute;font-size:2rem;display:grid;grid-template-columns:repeat(12,1fr);color:#000}header{grid-column:2 / span 5}section{grid-column:2 / 8}.backgroundColour{background-color:#ffffff4d;padding:0 20px;border-radius:20px;margin:20px 0}
